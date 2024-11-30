@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Te gustaria pasar esta ultima semana de clases conmigo?😿</title>
+    <style>
+        body {
+            background-color: crimson;
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        .body__title {
+            color: white;
+        }
+
+        .body__img {
+            width: 100%;
+            max-width: 512px;
+            border-radius: 50%;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: white;
+            border: 2px solid black;
+            padding: 10px 20px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="body__title">Te gustaria pasar esta ultima semana de clases conmigo?</h1>
+    <img src="https://i.pinimg.com/236x/71/ac/33/71ac33eaa46f49c456044dd1f5a88f64.jpg"
+    alt="Si vrd?" class="body__img" />
+    
+    <button id="yes">chi (te amo musho)</button>
+    <button id="no">ño (eres mala ;V)</button>
+    
+    <script>
+        const vutonSi = document.getElementById('yes');
+        const vutonNo = document.getElementById('no');
+
+        let countSi = 0; // Contador para el botón "sí"
+
+        // Función para responder cuando se presiona el botón "sí"
+        const respuestaSi = () => {
+            countSi++;
+            if (countSi === 1) {
+                alert('¡Aww, te quiero mucho!');
+            } else if (countSi === 2) {
+                alert('¡Qué feliz estoy de que aceptes! ❤️');
+            } else if (countSi === 3) {
+                alert('¡Te voy a extrañar muchísimo! 😭');
+            } else if (countSi === 4) {
+                alert('naaa ni decirte te amo es suficiente ;v');
+                location.href = 'https://www.youtube.com/watch?v=gaA7RAy5rYg'; // Redirige a un link de YouTube
+            }
+        };
+
+        // Función para mover el botón "no" aleatoriamente
+        const moverNo = () => {
+            vutonNo.style.position = 'absolute';
+            vutonNo.style.top = Math.random() * window.innerHeight + 'px';
+            vutonNo.style.left = Math.random() * window.innerWidth + 'px';
+        };
+
+        // Agregar los event listeners
+        vutonSi.addEventListener('click', respuestaSi);
+        vutonNo.addEventListener('mouseover', moverNo); // El botón "no" se moverá al pasar el mouse por encima
+    </script>
+</body>
+</html>
